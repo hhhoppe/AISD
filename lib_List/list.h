@@ -1,4 +1,4 @@
-// Copyright 2024 Dergynov Sergey
+// Copyright 2025 Dergynov Sergey
 
 #ifndef LIB_LIST_LIST_H_
 #define LIB_LIST_LIST_H_

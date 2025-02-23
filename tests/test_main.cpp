@@ -1,4 +1,4 @@
-// Copyright 2024 Marina Usova
+// Copyright 2024 Dergynov Sergey
 
 #include <gtest.h>
 

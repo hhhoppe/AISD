@@ -1,4 +1,4 @@
-// Copyright 2024 Dergynov Sergey
+// Copyright 2025 Dergynov Sergey
 
 #ifndef LIB_TVECTOR_TVECTOR_H_
 #define LIB_TVECTOR_TVECTOR_H_
