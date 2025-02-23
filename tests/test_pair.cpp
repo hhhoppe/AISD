@@ -4,7 +4,7 @@
 #include "../lib_pair/pair.h"
 
 // Проверка конструктора по умолчанию
-TEST(TestTPairLib, default) {
+TEST(TestTPairLib, defaultConstructor) {
 	TPair<int, double> pair0;
 	EXPECT_EQ(pair0.first(), 0);
 	EXPECT_EQ(pair0.second(), 0.0);

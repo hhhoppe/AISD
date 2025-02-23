@@ -1,5 +1,5 @@
 // Copyright 2025 Dergynov Sergey
-
+/*
 #ifndef LIB_ITABLE_ITABLE_H_
 #define LIB_ITABLE_ITABLE_H_
 
@@ -17,3 +17,5 @@ class ITable : TVector <TPair <TKey, TVal>> {
 };
 
 #endif  // LIB_ITABLE_ITABLE_H_
+
+*/

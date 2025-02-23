@@ -39,7 +39,7 @@ public:
 	TDmassive& assign(const TDmassive& massive);// метод присваивания значений
 
 	void clear();								// очистка массива
-	void resize(size_t n, const T& value);		// изменение размера массива
+	void resize(size_t n, const T& value = T());		// изменение размера массива
 	void reserve(size_t n);						// резервирование памяти для нового размера
 
 	void push_back(const T& value);				// добавление элемента (в конец)
@@ -61,6 +61,11 @@ public:
 	size_t find_last(const T& value) const;		// поиск элементов
 	size_t find_first(const T& value) const;
 	size_t* find_all(const T& value) const noexcept;
+
+	TDmassive<T>& operator=(const TDmassive<T>& mass);
+	TDmassive<T>& operator=(TDmassive<T>&& mass) noexcept;
+	T& operator[](size_t index);
+	const T& operator[](size_t index) const;
 
 private:
 	size_t count_value(T value) const noexcept; // подсчёт кол-ва появлений элемента
@@ -459,6 +464,64 @@ size_t TDmassive<T>::count_value(T value) const noexcept {
 		}
 	}
 	return count;
+}
+
+template <typename T>
+TDmassive<T>& TDmassive<T>::operator=(const TDmassive<T>& mass) {
+	if (this != &mass) {
+		delete[] _data;
+		delete[] _states;
+		_size = mass._size;
+		_capacity = mass._capacity;
+		_data = new T[_capacity];
+		_states = new State[_capacity];
+		for (size_t i = 0; i < _capacity; ++i) {
+			_states[i] = mass._states[i];
+			if (_states[i] == State::busy) {
+				_data[i] = mass._data[i];
+			}
+		}
+	}
+	return *this;
+}
+
+template <typename T>
+TDmassive<T>& TDmassive<T>::operator=(TDmassive<T>&& mass) noexcept {
+	if (this != &mass) {
+		delete[] _data;
+		delete[] _states;
+		_data = mass._data;
+		_states = mass._states;
+		_size = mass._size;
+		_capacity = mass._capacity;
+		mass._data = nullptr;
+		mass._states = nullptr;
+		mass._size = 0;
+		mass._capacity = 0;
+	}
+	return *this;
+}
+
+template <typename T>
+T& TDmassive<T>::operator[](size_t index) {
+	if (index >= _size) {
+		throw std::out_of_range("Index out of range");
+	}
+	if (_states[index] != State::busy) {
+		throw std::logic_error("Element is not valid");
+	}
+	return _data[index];
+}
+
+template <typename T>
+const T& TDmassive<T>::operator[](size_t index) const {
+	if (index >= _size) {
+		throw std::out_of_range("Index out of range");
+	}
+	if (_states[index] != State::busy) {
+		throw std::logic_error("Element is not valid.");
+	}
+	return _data[index];
 }
 
 #endif  // LIB_DMASSIVE_DMASSIVE_H_

@@ -166,3 +166,84 @@ TEST(TestTDmassiveLib, swap) {
     EXPECT_EQ(massive1.data()[0], 10);
     EXPECT_EQ(massive2.data()[0], 5);
 }
+
+// Проверка оператора присваивания
+TEST(TestTDmassiveLib, AssignOperator) {
+    TDmassive<int> mass1;
+    mass1.push_back(10);
+    mass1.push_back(20);
+
+    TDmassive<int> mass2;
+    mass2 = mass1;
+
+    EXPECT_EQ(mass2.size(), 2);
+    EXPECT_EQ(mass2[0], 10);
+    EXPECT_EQ(mass2[1], 20);
+}
+
+// Проверка перемещающего оператора присваивания
+TEST(TestTDmassiveLib, MoveAssignOperator) {
+    TDmassive<int> mass1;
+    mass1.push_back(10);
+    mass1.push_back(20);
+
+    TDmassive<int> mass2;
+    mass2 = std::move(mass1);
+
+    EXPECT_EQ(mass2.size(), 2);
+    EXPECT_EQ(mass2[0], 10);
+    EXPECT_EQ(mass2[1], 20);
+    EXPECT_EQ(mass1.size(), 0);
+}
+
+// Проверка оператора доступа по индексу
+TEST(TestTDmassiveLib, SubOperator) {
+    TDmassive<int> mass;
+    mass.push_back(10);
+    mass.push_back(20);
+
+    EXPECT_EQ(mass[0], 10);
+    EXPECT_EQ(mass[1], 20);
+
+    mass[1] = 100;
+    EXPECT_EQ(mass[1], 100);
+}
+
+// Проверка оператора доступа по индексу (const)
+TEST(TestTDmassiveLib, SubOperatorConst) {
+    TDmassive<int> mass;
+    mass.push_back(10);
+    mass.push_back(20);
+
+    const TDmassive<int>& constMass = mass;
+
+    EXPECT_EQ(constMass[0], 10);
+    EXPECT_EQ(constMass[1], 20);
+}
+
+// Проверка исключения в операторе доступа по индексу
+TEST(TestTDmassiveLib, SubOperatorOutOfRange) {
+    TDmassive<int> mass;
+    mass.push_back(10);
+
+    EXPECT_THROW(mass[1], std::out_of_range);
+}
+
+// Проверка исключения в операторе доступа по индексу (const)
+TEST(TestTDmassiveLib, SubOperatorConstOutOfRange) {
+    TDmassive<int> mass;
+    mass.push_back(10);
+
+    const TDmassive<int>& constMass = mass;
+
+    EXPECT_THROW(constMass[1], std::out_of_range);
+}
+
+// Проверка для исключения при доступе к некорректному элементу
+TEST(TestTDmassiveLib, SubOperatorInvalidElem) {
+    TDmassive<int> mass;
+    mass.push_back(10);
+    mass.pop_back();
+
+    EXPECT_THROW(mass[0], std::logic_error);
+}

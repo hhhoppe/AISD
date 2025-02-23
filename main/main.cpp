@@ -1,41 +1,6 @@
 ﻿// Copyright 2024 Dergynov Sergey
 
-#define DMassive
-
-#ifdef EASY_EXAMPLE
-
-#include <iostream>
-#include <iomanip>
-#include "../lib_easy_example/easy_example.h"
-
-int main() {
-  int a, b;
-  float result;
-
-  a = 1; b = 4;
-
-  try {
-      result = division(a, b);
-      std::cout << a << " / " << b << " = "
-          << std::setprecision(2) << result << std::endl;
-  } catch (std::exception err) {
-      std::cerr << err.what() << std::endl;
-  }
-
-  a = 1; b = 0;
-
-  try {
-      result = division(a, b);
-      std::cout << a << " / " << b << " = "
-          << std::setprecision(2) << result << std::endl;
-  } catch (std::exception err) {
-      std::cerr << err.what() << std::endl;
-  }
-
-  return 0;
-}
-
-#endif  // EASY_EXAMPLE
+//#define
 
 #ifdef Pair
 
@@ -276,3 +241,18 @@ int main() {
 }
 
 #endif  // List
+
+#ifdef DSU
+
+#include <iostream>
+#include <iomanip>
+#include "../lib_dsu/dsu.h"
+
+int main() {
+
+    ///
+
+    return 0;
+}
+
+#endif  // DSU

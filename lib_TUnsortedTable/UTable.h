@@ -1,5 +1,7 @@
 // Copyright 2025 Dergynov Sergey
 
+/*
+
 #ifndef LIB_TUNSORTEDTABLE_UTABLE_H_
 #define LIB_TUNSORTEDTABLE_UTABLE_H_
 
@@ -34,3 +36,5 @@ public:
 };
 
 #endif  //LIB_TUNSORTEDTABLE_UTABLE_H_
+
+*/

@@ -1,3 +1,3 @@
 // Copyright 2024 Dergynov Sergey
 
-#include "../lib_Dmassive/dmassive.h"
+#include "../lib_DMassive/dmassive.h"
