@@ -63,6 +63,22 @@ void DSU::union_noob(int first, int second) {
 	_parent[_second] = _first;
 }
 
+void DSU::union_pro(int first, int second) {
+	int _first = find_pro(first);
+	int _second = find_pro(second);
+	if (_first == _second) {
+		return;
+	}
+	if (_rank[_first] < _rank[_second]) {
+		_parent[_first] = _second;
+	} else if (_rank[_first] > _rank[_second]) {
+		_parent[_second] = _first;
+	} else {
+		_parent[_second] = _first;
+		_rank[_first]++;
+	}
+}
+
 void DSU::clear() {
 	for (int i = 0; i < _size; ++i) {
 		_parent[i] = i;
