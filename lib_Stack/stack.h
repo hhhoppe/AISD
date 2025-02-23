@@ -37,9 +37,7 @@ template <typename T>
 Stack<T>::Stack(const Stack<T>& stack) : _data(stack._data) {}
 
 template <typename T>
-Stack<T>::~Stack() {
-	_data.clear();
-}
+Stack<T>::~Stack() {}
 
 template <typename T>
 Stack<T>& Stack<T>::operator=(const Stack<T>& stack) {
