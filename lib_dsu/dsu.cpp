@@ -69,6 +69,7 @@ void DSU::union_pro(int first, int second) {
 	if (_first == _second) {
 		return;
 	}
+	
 	if (_rank[_first] < _rank[_second]) {
 		_parent[_first] = _second;
 	} else if (_rank[_first] > _rank[_second]) {
