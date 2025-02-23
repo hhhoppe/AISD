@@ -11,8 +11,8 @@ public:
 	DSU(int size = 0);
 	~DSU();
 	void make_set(int elem);
-	int find(int elem);
-	void union1(int first, int second);
+	int find_noob(int elem);
+	void union_noob(int first, int second);
 	void clear();
 };
 
