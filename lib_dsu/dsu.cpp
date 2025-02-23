@@ -22,24 +22,36 @@ DSU::~DSU() {
 	delete[] _rank;
 }
 
-//Множество с одним элементом
 void DSU::make_set(int elem) {
-	if (elem >= 0 && elem < _size) {
+	if (elem <= 0 || elem > _size) {
+		throw std::logic_error("Elem <= 0 or Elem > Size!");
+	}
+	else {
 		_parent[elem] = elem;
 		_rank[elem] = 1;
 	}
 }
 
 int DSU::find_noob(int elem) {
-	if (elem < 0 || elem >= _size) {
-		throw std::logic_error("Elem < 0 or Elem > Size!");
-		return -1;
+	if (elem <= 0 || elem > _size) {
+		throw std::logic_error("Elem <= 0 or Elem > Size!");
 	}
 	elem--;
 	if (_parent[elem] == elem) { 
 		return elem; 
 	}
 	return find_noob(_parent[elem]);
+}
+
+int DSU::find_pro(int elem) {
+	if (elem <= 0 || elem > _size) {
+		throw std::logic_error("Elem <= 0 or Elem > Size!");
+	}
+	elem--;
+	if (_parent[elem] != elem) {
+		_parent[elem] = find_pro(_parent[elem]);
+	}
+	return _parent[elem];
 }
 
 void DSU::union_noob(int first, int second) {

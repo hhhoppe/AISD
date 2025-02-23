@@ -12,6 +12,7 @@ public:
 	~DSU();
 	void make_set(int elem);
 	int find_noob(int elem);
+	int find_pro(int elem);
 	void union_noob(int first, int second);
 	void clear();
 };
