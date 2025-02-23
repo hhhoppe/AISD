@@ -4,21 +4,21 @@
 #include "../lib_TVector/tvector.h"
 #include "../lib_DMassive/dmassive.h"
 
-// Проверка конструктора по умолчанию
+// С•СЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 TEST(TestTVectorLib, DefaultConstructor) {
     TVector<int> vec;
     EXPECT_EQ(vec.size(), 0);
     EXPECT_EQ(vec.get_start_index(), 0);
 }
 
-// Проверка конструктора с размером и начальным индексом
+// С•СЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° СЃ СЂР°Р·РјРµСЂРѕРј Рё РЅР°С‡Р°Р»СЊРЅС‹Рј РёРЅРґРµРєСЃРѕРј
 TEST(TestTVectorLib, SizeStartIndexConstructor) {
     TVector<int> vec(5, 2);
     EXPECT_EQ(vec.size(), 5);
     EXPECT_EQ(vec.get_start_index(), 2);
 }
 
-// Проверка конструктора из массива
+// С•СЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РёР· РјР°СЃСЃРёРІР°
 TEST(TestTVectorLib, MassiveConstructor) {
     int mass[] = { 1, 2, 3, 4, 5 };
     TVector<int> vec(mass, 5, 1);
@@ -29,7 +29,7 @@ TEST(TestTVectorLib, MassiveConstructor) {
     EXPECT_EQ(vec[5], 5);
 }
 
-// Проверка конструктора копирования
+// С•СЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РєРѕРїРёСЂРѕРІР°РЅРёВ¤
 TEST(TestTVectorLib, CopyConstructor) {
     TVector<int> vec1(3, 1);
     vec1[1] = 10;
@@ -44,7 +44,7 @@ TEST(TestTVectorLib, CopyConstructor) {
     EXPECT_EQ(vec2[3], 30);
 }
 
-// Проверка оператора присваивания
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёСЃРІР°РёРІР°РЅРёВ¤
 TEST(TestTVectorLib, AssignOperator) {
     TVector<int> vec1(3, 1);
     vec1[1] = 10;
@@ -60,7 +60,7 @@ TEST(TestTVectorLib, AssignOperator) {
     EXPECT_EQ(vec2[3], 30);
 }
 
-// Проверка оператора доступа по индексу
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° РґРѕСЃС‚СѓРїР° РїРѕ РёРЅРґРµРєСЃСѓ
 TEST(TestTVectorLib, IndexOperator) {
     TVector<int> vec(3, 1);
     vec[1] = 10;
@@ -72,7 +72,7 @@ TEST(TestTVectorLib, IndexOperator) {
     EXPECT_EQ(vec[3], 30);
 }
 
-// Проверка оператора сложения
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° СЃР»РѕР¶РµРЅРёВ¤
 TEST(TestTVectorLib, AddOperator) {
     TVector<int> vec1(3, 1);
     vec1[1] = 10;
@@ -90,7 +90,7 @@ TEST(TestTVectorLib, AddOperator) {
     EXPECT_EQ(result[3], 33);
 }
 
-// Проверка оператора вычитания
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° РІС‹С‡РёС‚Р°РЅРёВ¤
 TEST(TestTVectorLib, SubOperator) {
     TVector<int> vec1(3, 1);
     vec1[1] = 10;
@@ -108,7 +108,7 @@ TEST(TestTVectorLib, SubOperator) {
     EXPECT_EQ(result[3], 27);
 }
 
-// Проверка оператора скалярного произведения
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° СЃРєР°Р»В¤СЂРЅРѕРіРѕ РїСЂРѕРёР·РІРµРґРµРЅРёВ¤
 TEST(TestTVectorLib, MultScalarOperator) {
     TVector<int> vec1(3, 1);
     vec1[1] = 1;
@@ -124,7 +124,7 @@ TEST(TestTVectorLib, MultScalarOperator) {
     EXPECT_EQ(result, 32);
 }
 
-// Проверка оператора сложения с присваиванием
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° СЃР»РѕР¶РµРЅРёВ¤ СЃ РїСЂРёСЃРІР°РёРІР°РЅРёРµРј
 TEST(TestTVectorLib, AddAssignOperator) {
     TVector<int> vec1(3, 1);
     vec1[1] = 10;
@@ -142,7 +142,7 @@ TEST(TestTVectorLib, AddAssignOperator) {
     EXPECT_EQ(vec1[3], 33);
 }
 
-// Проверка оператора вычитания с присваиванием
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° РІС‹С‡РёС‚Р°РЅРёВ¤ СЃ РїСЂРёСЃРІР°РёРІР°РЅРёРµРј
 TEST(TestTVectorLib, SubAssignOperator) {
     TVector<int> vec1(3, 1);
     vec1[1] = 10;
@@ -160,7 +160,7 @@ TEST(TestTVectorLib, SubAssignOperator) {
     EXPECT_EQ(vec1[3], 27);
 }
 
-// Проверка оператора умножения на скаляр
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° СѓРјРЅРѕР¶РµРЅРёВ¤ РЅР° СЃРєР°Р»В¤СЂ
 TEST(TestTVectorLib, ScalarMultOperator) {
     TVector<int> vec(3, 1);
     vec[1] = 1;
@@ -173,7 +173,7 @@ TEST(TestTVectorLib, ScalarMultOperator) {
     EXPECT_EQ(result[3], 6);
 }
 
-// Проверка оператора умножения на скаляр с присваиванием
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° СѓРјРЅРѕР¶РµРЅРёВ¤ РЅР° СЃРєР°Р»В¤СЂ СЃ РїСЂРёСЃРІР°РёРІР°РЅРёРµРј
 TEST(TestTVectorLib, ScalarMultnAssignOperator) {
     TVector<int> vec(3, 1);
     vec[1] = 1;
@@ -186,7 +186,7 @@ TEST(TestTVectorLib, ScalarMultnAssignOperator) {
     EXPECT_EQ(vec[3], 6);
 }
 
-// Проверка оператора сравнения
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёВ¤
 TEST(TestTVectorLib, EqualityOperator) {
     TVector<int> vec1(3, 1);
     vec1[1] = 1;
@@ -201,7 +201,7 @@ TEST(TestTVectorLib, EqualityOperator) {
     EXPECT_TRUE(vec1 == vec2);
 }
 
-// Проверка оператора неравенства
+// С•СЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° РЅРµСЂР°РІРµРЅСЃС‚РІР°
 TEST(TestTVectorLib, InequalityOperator) {
     TVector<int> vec1(3, 1);
     vec1[1] = 1;
@@ -216,14 +216,14 @@ TEST(TestTVectorLib, InequalityOperator) {
     EXPECT_TRUE(vec1 != vec2);
 }
 
-// Проверка метода изменения размера
+// С•СЂРѕРІРµСЂРєР° РјРµС‚РѕРґР° РёР·РјРµРЅРµРЅРёВ¤ СЂР°Р·РјРµСЂР°
 TEST(TestTVectorLib, SetSize) {
     TVector<int> vec(3, 1);
     vec.set_size(5);
     EXPECT_EQ(vec.size(), 5);
 }
 
-// Проверка метода очистки
+// С•СЂРѕРІРµСЂРєР° РјРµС‚РѕРґР° РѕС‡РёСЃС‚РєРё
 TEST(TestTVectorLib, Clear) {
     TVector<int> vec(3, 1);
     vec.clear();
@@ -231,7 +231,7 @@ TEST(TestTVectorLib, Clear) {
     EXPECT_EQ(vec.get_start_index(), 0);
 }
 
-// Проверка метода вывода
+// С•СЂРѕРІРµСЂРєР° РјРµС‚РѕРґР° РІС‹РІРѕРґР°
 TEST(TestTVectorLib, Print) {
     TVector<int> vec(3, 1);
     vec[1] = 1;

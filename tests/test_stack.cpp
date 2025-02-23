@@ -3,14 +3,14 @@
 #include <gtest.h>
 #include "../lib_Stack/stack.h"
 
-// Проверка конструктора по умолчанию
+// РџСЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 TEST(TestStackLib, DefaultConstructor) {
     Stack<int> stack;
     EXPECT_TRUE(stack.empty());
     EXPECT_EQ(stack.size(), 0);
 }
 
-// Проверка конструктора копирования
+// РџСЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 TEST(TestStackLib, CopyConstructor) {
     Stack<int> stack1;
     stack1.push(500);
@@ -20,7 +20,7 @@ TEST(TestStackLib, CopyConstructor) {
     EXPECT_EQ(stack2.top(), 600);
 }
 
-// Проверка оператора присваивания
+// РџСЂРѕРІРµСЂРєР° РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 TEST(TestStackLib, AssignOperator) {
     Stack<int> stack1;
     stack1.push(700);
@@ -31,7 +31,7 @@ TEST(TestStackLib, AssignOperator) {
     EXPECT_EQ(stack2.top(), 800);
 }
 
-// Проверка добавления элемента на вершину стека
+// РџСЂРѕРІРµСЂРєР° РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РЅР° РІРµСЂС€РёРЅСѓ СЃС‚РµРєР°
 TEST(TestStackLib, push) {
     Stack<int> stack;
     stack.push(10);
@@ -40,7 +40,7 @@ TEST(TestStackLib, push) {
     EXPECT_EQ(stack.top(), 10);
 }
 
-// Проверка удаления элемента с вершины стека
+// РџСЂРѕРІРµСЂРєР° СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° СЃ РІРµСЂС€РёРЅС‹ СЃС‚РµРєР°
 TEST(TestStackLib, pop) {
     Stack<int> stack;
     stack.push(20);
@@ -50,7 +50,7 @@ TEST(TestStackLib, pop) {
     EXPECT_EQ(stack.top(), 20);
 }
 
-// Проверка получения элемента с вершины стека
+// РџСЂРѕРІРµСЂРєР° РїРѕР»СѓС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° СЃ РІРµСЂС€РёРЅС‹ СЃС‚РµРєР°
 TEST(TestStackLib, top) {
     Stack<int> stack;
     stack.push(40);
@@ -58,7 +58,7 @@ TEST(TestStackLib, top) {
     EXPECT_EQ(stack.top(), 50);
 }
 
-// Проверка получения элемента с вершины стека (const)
+// РџСЂРѕРІРµСЂРєР° РїРѕР»СѓС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° СЃ РІРµСЂС€РёРЅС‹ СЃС‚РµРєР° (const)
 TEST(TestStackLib, topConst) {
     Stack<int> stack;
     stack.push(60);
@@ -66,7 +66,7 @@ TEST(TestStackLib, topConst) {
     EXPECT_EQ(constStack.top(), 60);
 }
 
-// Проверка на пустоту стека
+// РџСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕС‚Сѓ СЃС‚РµРєР°
 TEST(TestStackLib, empty) {
     Stack<int> stack;
     EXPECT_TRUE(stack.empty());
@@ -74,7 +74,7 @@ TEST(TestStackLib, empty) {
     EXPECT_FALSE(stack.empty());
 }
 
-// Проверка на подсчёт кол-ва элементов стека
+// РџСЂРѕРІРµСЂРєР° РЅР° РїРѕРґСЃС‡С‘С‚ РєРѕР»-РІР° СЌР»РµРјРµРЅС‚РѕРІ СЃС‚РµРєР°
 TEST(TestStackLib, size) {
     Stack<int> stack;
     EXPECT_EQ(stack.size(), 0);
@@ -83,7 +83,7 @@ TEST(TestStackLib, size) {
     EXPECT_EQ(stack.size(), 2);
 }
 
-// Проверка очистку стека
+// РџСЂРѕРІРµСЂРєР° РѕС‡РёСЃС‚РєСѓ СЃС‚РµРєР°
 TEST(TestStackLib, clear) {
     Stack<int> stack;
     stack.push(100);
@@ -93,7 +93,7 @@ TEST(TestStackLib, clear) {
     EXPECT_EQ(stack.size(), 0);
 }
 
-// Проверка вывод стека
+// РџСЂРѕРІРµСЂРєР° РІС‹РІРѕРґ СЃС‚РµРєР°
 TEST(TestStackLib, print) {
     Stack<int> stack;
     stack.push(300);

@@ -10,24 +10,24 @@
 template <typename T>
 class Stack {
 private:
-	TDmassive<T> _data;			// Кондейнер для хранения элементов
+	TDmassive<T> _data;			// РљРѕРЅРґРµР№РЅРµСЂ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ
 public:
-	Stack();					// Конструктор по умолчанию
-	Stack(const Stack<T>& stack);// Конструктор копирования
-	~Stack();					// Деструктор
+	Stack();					// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	Stack(const Stack<T>& stack);// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	~Stack();					// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	
-	Stack<T>& operator=(const Stack<T>& stack);	// Оператор присваивания
+	Stack<T>& operator=(const Stack<T>& stack);	// РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 
-	void push(const T& value);	// Добавить элемент на вершину стека
-	void pop();					// Удалить элемент с вершины стека
-	T& top();					// Получить элемент с вершины стека
-	const T& top() const;		// Получить элемент с вершины стека (const)
+	void push(const T& value);	// Р”РѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РЅР° РІРµСЂС€РёРЅСѓ СЃС‚РµРєР°
+	void pop();					// РЈРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ СЃ РІРµСЂС€РёРЅС‹ СЃС‚РµРєР°
+	T& top();					// РџРѕР»СѓС‡РёС‚СЊ СЌР»РµРјРµРЅС‚ СЃ РІРµСЂС€РёРЅС‹ СЃС‚РµРєР°
+	const T& top() const;		// РџРѕР»СѓС‡РёС‚СЊ СЌР»РµРјРµРЅС‚ СЃ РІРµСЂС€РёРЅС‹ СЃС‚РµРєР° (const)
 
-	bool empty() const noexcept;// Пуст ли стек
-	size_t size() const noexcept;// Кол-во элементов в стеке
+	bool empty() const noexcept;// РџСѓСЃС‚ Р»Рё СЃС‚РµРє
+	size_t size() const noexcept;// РљРѕР»-РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ СЃС‚РµРєРµ
 
-	void clear();				// Очистить стек
-	void print() const;			// Вывод стека
+	void clear();				// РћС‡РёСЃС‚РёС‚СЊ СЃС‚РµРє
+	void print() const;			// Р’С‹РІРѕРґ СЃС‚РµРєР°
 };
 
 template <typename T>

@@ -10,54 +10,54 @@
 template <typename T>
 class TVector {
 protected:
-	TDmassive<T> _data;		// Кондейнер для хранения элементов
-	size_t _start_index;	// Начальный индекс вектора
+	TDmassive<T> _data;		// РљРѕРЅРґРµР№РЅРµСЂ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ
+	size_t _start_index;	// РќР°С‡Р°Р»СЊРЅС‹Р№ РёРЅРґРµРєСЃ РІРµРєС‚РѕСЂР°
 public:
-	TVector();														// Конструктор по умолчанию
-	explicit TVector(size_t size, size_t start_index = 0);			// Конструктор с размером и начальным индексом
-	TVector(const T* mass, size_t size, size_t start_index = 0);	// Конструктор из массива
-	TVector(const TVector<T>& vector);								// Конструктор копирования
+	TVector();														// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	explicit TVector(size_t size, size_t start_index = 0);			// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ СЂР°Р·РјРµСЂРѕРј Рё РЅР°С‡Р°Р»СЊРЅС‹Рј РёРЅРґРµРєСЃРѕРј
+	TVector(const T* mass, size_t size, size_t start_index = 0);	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РёР· РјР°СЃСЃРёРІР°
+	TVector(const TVector<T>& vector);								// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 
-	~TVector();				// Деструктор
+	~TVector();				// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 
-	TVector<T>& operator=(const TVector<T>& vector);		// Оператор присваивания
-	T& operator[](size_t index);							// Операторы доступа
+	TVector<T>& operator=(const TVector<T>& vector);		// РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
+	T& operator[](size_t index);							// РћРїРµСЂР°С‚РѕСЂС‹ РґРѕСЃС‚СѓРїР°
 	const T& operator[](size_t index) const;
 
-	TVector<T> operator+(const TVector<T>& vector) const;	// Оператор сложения
-	TVector<T> operator-(const TVector<T>& vector) const;	// Оператор вычитания
-	T operator*(const TVector<T>& vector) const;			// Оператор произведения
+	TVector<T> operator+(const TVector<T>& vector) const;	// РћРїРµСЂР°С‚РѕСЂ СЃР»РѕР¶РµРЅРёСЏ
+	TVector<T> operator-(const TVector<T>& vector) const;	// РћРїРµСЂР°С‚РѕСЂ РІС‹С‡РёС‚Р°РЅРёСЏ
+	T operator*(const TVector<T>& vector) const;			// РћРїРµСЂР°С‚РѕСЂ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ
 	
-	TVector<T>& operator+=(const TVector<T>& vector);		// Оператор сложения (присваивание)
-	TVector<T>& operator-=(const TVector<T>& vector);		// Оператор вычитания (присваивание)
+	TVector<T>& operator+=(const TVector<T>& vector);		// РћРїРµСЂР°С‚РѕСЂ СЃР»РѕР¶РµРЅРёСЏ (РїСЂРёСЃРІР°РёРІР°РЅРёРµ)
+	TVector<T>& operator-=(const TVector<T>& vector);		// РћРїРµСЂР°С‚РѕСЂ РІС‹С‡РёС‚Р°РЅРёСЏ (РїСЂРёСЃРІР°РёРІР°РЅРёРµ)
 
-	bool operator==(const TVector<T>& vector) const;		// Операторы сравнения
+	bool operator==(const TVector<T>& vector) const;		// РћРїРµСЂР°С‚РѕСЂС‹ СЃСЂР°РІРЅРµРЅРёСЏ
 	bool operator!=(const TVector<T>& vector) const;
 	
-	TVector<T> operator*(const T& scalar) const;			// Оператор умножения на скаляр
-	TVector<T>& operator*=(const T& scalar);				// Оператор умножения на скаляр (присваивание)
+	TVector<T> operator*(const T& scalar) const;			// РћРїРµСЂР°С‚РѕСЂ СѓРјРЅРѕР¶РµРЅРёСЏ РЅР° СЃРєР°Р»СЏСЂ
+	TVector<T>& operator*=(const T& scalar);				// РћРїРµСЂР°С‚РѕСЂ СѓРјРЅРѕР¶РµРЅРёСЏ РЅР° СЃРєР°Р»СЏСЂ (РїСЂРёСЃРІР°РёРІР°РЅРёРµ)
 
-	size_t size() const;									// Получение размера вектора
-	size_t get_start_index() const;							// Геттер (начальный индекс)
-	void set_start_index(size_t start_index);				// Сеттер (начальный индекс)
+	size_t size() const;									// РџРѕР»СѓС‡РµРЅРёРµ СЂР°Р·РјРµСЂР° РІРµРєС‚РѕСЂР°
+	size_t get_start_index() const;							// Р“РµС‚С‚РµСЂ (РЅР°С‡Р°Р»СЊРЅС‹Р№ РёРЅРґРµРєСЃ)
+	void set_start_index(size_t start_index);				// РЎРµС‚С‚РµСЂ (РЅР°С‡Р°Р»СЊРЅС‹Р№ РёРЅРґРµРєСЃ)
 
-	void set_size(size_t new_size);							// Изменение размера вектора
-	void clear();											// Очистка вектора
+	void set_size(size_t new_size);							// РР·РјРµРЅРµРЅРёРµ СЂР°Р·РјРµСЂР° РІРµРєС‚РѕСЂР°
+	void clear();											// РћС‡РёСЃС‚РєР° РІРµРєС‚РѕСЂР°
 
-	void print(std::ostream& out = std::cout) const;		// Вывод вектора
+	void print(std::ostream& out = std::cout) const;		// Р’С‹РІРѕРґ РІРµРєС‚РѕСЂР°
 
-	class Iterator {										// Вложенный класс для обхода элементов вектора
+	class Iterator {										// Р’Р»РѕР¶РµРЅРЅС‹Р№ РєР»Р°СЃСЃ РґР»СЏ РѕР±С…РѕРґР° СЌР»РµРјРµРЅС‚РѕРІ РІРµРєС‚РѕСЂР°
 	private:
-		TVector<T>& _vector;								// Ссылка на вектор
-		size_t _index;										// Текущий индекс
+		TVector<T>& _vector;								// РЎСЃС‹Р»РєР° РЅР° РІРµРєС‚РѕСЂ
+		size_t _index;										// РўРµРєСѓС‰РёР№ РёРЅРґРµРєСЃ
 	public:
 		explicit Iterator(TVector<T>& vector): _vector(vector), _index(0) {}
 
-		void FirstIterator() { _index = 0; }				// Установить итератор на начало
-		void NextIterator() { ++_index; }					// Переместить итератор на след элемент
-		bool IfEnd() const { return _index >= _vector.size(); } // Конец ли вектора
+		void FirstIterator() { _index = 0; }				// РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РёС‚РµСЂР°С‚РѕСЂ РЅР° РЅР°С‡Р°Р»Рѕ
+		void NextIterator() { ++_index; }					// РџРµСЂРµРјРµСЃС‚РёС‚СЊ РёС‚РµСЂР°С‚РѕСЂ РЅР° СЃР»РµРґ СЌР»РµРјРµРЅС‚
+		bool IfEnd() const { return _index >= _vector.size(); } // РљРѕРЅРµС† Р»Рё РІРµРєС‚РѕСЂР°
 
-		T& CurrentElem() {									// Текущий элемент
+		T& CurrentElem() {									// РўРµРєСѓС‰РёР№ СЌР»РµРјРµРЅС‚
 			if (IfEnd()) {
 				throw std::out_of_range("Iterator out of range of vector");
 			}
@@ -65,7 +65,7 @@ public:
 		}
 	};
 
-	Iterator GetIterator() {								// Получить итератор
+	Iterator GetIterator() {								// РџРѕР»СѓС‡РёС‚СЊ РёС‚РµСЂР°С‚РѕСЂ
 		return Iterator(*this);
 	}
 };

@@ -3,7 +3,7 @@
 #include <gtest.h>
 #include "../lib_Queue/queue.h"
 
-// Проверка конструктора по умолчанию
+// РџСЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 TEST(TestTQueueLib, DefaultConstructor) {
     TQueue<int> queue;
     EXPECT_TRUE(queue.ifEmpty());
@@ -11,7 +11,7 @@ TEST(TestTQueueLib, DefaultConstructor) {
     EXPECT_EQ(queue.capacity(), 10);
 }
 
-// Проверка конструктора с параметром
+// РџСЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° СЃ РїР°СЂР°РјРµС‚СЂРѕРј
 TEST(TestTQueueLib, ParameterConstructor) {
     TQueue<int> queue(5);
     EXPECT_TRUE(queue.ifEmpty());
@@ -19,7 +19,7 @@ TEST(TestTQueueLib, ParameterConstructor) {
     EXPECT_EQ(queue.capacity(), 5);
 }
 
-// Проверка конструктора копирования
+// РџСЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 TEST(TestTQueueLib, CopyConstructor) {
     TQueue<int> queue1;
     queue1.push(10);
@@ -31,7 +31,7 @@ TEST(TestTQueueLib, CopyConstructor) {
     EXPECT_EQ(queue2.pop(), 20);
 }
 
-// Проверка конструктора из массива
+// РџСЂРѕРІРµСЂРєР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РёР· РјР°СЃСЃРёРІР°
 TEST(TestTQueueLib, MassConstructor) {
     TDmassive<int> mass;
     mass.push_back(1);
@@ -45,7 +45,7 @@ TEST(TestTQueueLib, MassConstructor) {
     EXPECT_EQ(queue.pop(), 3);
 }
 
-// Проверка на полноту очереди
+// РџСЂРѕРІРµСЂРєР° РЅР° РїРѕР»РЅРѕС‚Сѓ РѕС‡РµСЂРµРґРё
 TEST(TestTQueueLib, ifFull) {
     TQueue<int> queue(2);
     queue.push(1);
@@ -53,7 +53,7 @@ TEST(TestTQueueLib, ifFull) {
     EXPECT_TRUE(queue.ifFull());
 }
 
-// Проверка на постоту очереди
+// РџСЂРѕРІРµСЂРєР° РЅР° РїРѕСЃС‚РѕС‚Сѓ РѕС‡РµСЂРµРґРё
 TEST(TestTQueueLib, ifEmpty) {
     TQueue<int> queue;
     EXPECT_TRUE(queue.ifEmpty());
@@ -61,7 +61,7 @@ TEST(TestTQueueLib, ifEmpty) {
     EXPECT_FALSE(queue.ifEmpty());
 }
 
-// Проверка на добавление элемента в конец
+// РџСЂРѕРІРµСЂРєР° РЅР° РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РєРѕРЅРµС†
 TEST(TestTQueueLib, push) {
     TQueue<int> queue;
     queue.push(10);
@@ -70,7 +70,7 @@ TEST(TestTQueueLib, push) {
     EXPECT_EQ(queue.pop(), 10);
 }
 
-// Проверка на удаление и возврат элемента из начала
+// РџСЂРѕРІРµСЂРєР° РЅР° СѓРґР°Р»РµРЅРёРµ Рё РІРѕР·РІСЂР°С‚ СЌР»РµРјРµРЅС‚Р° РёР· РЅР°С‡Р°Р»Р°
 TEST(TestTQueueLib, pop) {
     TQueue<int> queue;
     queue.push(20);
@@ -80,7 +80,7 @@ TEST(TestTQueueLib, pop) {
     EXPECT_TRUE(queue.ifEmpty());
 }
 
-// Проверка на возврат индекса из начала очереди
+// РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РІСЂР°С‚ РёРЅРґРµРєСЃР° РёР· РЅР°С‡Р°Р»Р° РѕС‡РµСЂРµРґРё
 TEST(TestTQueueLib, getFront) {
     TQueue<int> queue;
     queue.push(10);
@@ -90,7 +90,7 @@ TEST(TestTQueueLib, getFront) {
     EXPECT_EQ(queue.get_front(), 1);
 }
 
-// Проверка на возврат индекса из конца очереди
+// РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РІСЂР°С‚ РёРЅРґРµРєСЃР° РёР· РєРѕРЅС†Р° РѕС‡РµСЂРµРґРё
 TEST(TestTQueueLib, getBack) {
     TQueue<int> queue;
     queue.push(10);
@@ -99,7 +99,7 @@ TEST(TestTQueueLib, getBack) {
     EXPECT_EQ(queue.get_back(), 1);
 }
 
-// Проверка на возврат размера очереди
+// РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РІСЂР°С‚ СЂР°Р·РјРµСЂР° РѕС‡РµСЂРµРґРё
 TEST(TestTQueueLib, size) {
     TQueue<int> queue;
     EXPECT_EQ(queue.size(), 0);
@@ -109,13 +109,13 @@ TEST(TestTQueueLib, size) {
     EXPECT_EQ(queue.size(), 0);
 }
 
-// Проверка на возврат вместимости очереди
+// РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РІСЂР°С‚ РІРјРµСЃС‚РёРјРѕСЃС‚Рё РѕС‡РµСЂРµРґРё
 TEST(TestTQueueLib, capacity) {
     TQueue<int> queue(15);
     EXPECT_EQ(queue.capacity(), 15);
 }
 
-// Проверка на очистку очереди
+// РџСЂРѕРІРµСЂРєР° РЅР° РѕС‡РёСЃС‚РєСѓ РѕС‡РµСЂРµРґРё
 TEST(TestTQueueLib, clear) {
     TQueue<int> queue;
     queue.push(10);
@@ -125,7 +125,7 @@ TEST(TestTQueueLib, clear) {
     EXPECT_EQ(queue.size(), 0);
 }
 
-// Проверка на вывод содержимого очереди
+// РџСЂРѕРІРµСЂРєР° РЅР° РІС‹РІРѕРґ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ РѕС‡РµСЂРµРґРё
 TEST(TestTQueueLib, print) {
     TQueue<int> queue;
     queue.push(10);

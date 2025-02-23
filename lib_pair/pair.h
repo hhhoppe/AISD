@@ -1,4 +1,4 @@
-﻿// Copyright 2024 Dergynov Sergey
+// Copyright 2024 Dergynov Sergey
 
 #ifndef LIB_PAIR_PAIR_H_
 #define LIB_PAIR_PAIR_H_
