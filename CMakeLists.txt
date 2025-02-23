@@ -17,6 +17,8 @@ add_subdirectory(lib_Stack)
 add_subdirectory(lib_Queue)
 add_subdirectory(lib_List)
 add_subdirectory(lib_dsu)
+add_subdirectory(lib_ITable)
+add_subdirectory(lib_TUnsortedTable)
 add_subdirectory(main)                # подключаем дополнительный CMakeLists.txt из подкаталога с именем main
 
 option(BTEST "build test?" ON)        # указываем подключаем ли google-тесты (ON или YES) или нет (OFF или NO)
