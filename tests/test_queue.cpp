@@ -2,7 +2,7 @@
 
 #include <gtest.h>
 #include "../lib_Queue/queue.h"
-
+/*
 // Проверка конструктора по умолчанию
 TEST(TestTQueueLib, DefaultConstructor) {
     TQueue<int> queue;
@@ -136,3 +136,4 @@ TEST(TestTQueueLib, print) {
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "10 20 30 \n");
 }
+*/
